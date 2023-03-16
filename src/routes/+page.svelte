@@ -1,4 +1,5 @@
 <script>
+	import { Button } from 'flowbite-svelte'
 </script>
 
 <svelte:head>
@@ -7,5 +8,5 @@
 </svelte:head>
 
 <section>
-	<a href="budgets/2023-02" class="btn btn-primary">Feb</a>
+	<Button href="budgets/2023-02">Feb</Button>
 </section>

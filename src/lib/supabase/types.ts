@@ -74,6 +74,29 @@ export interface Database {
 					year_month?: string
 				}
 			}
+			notes: {
+				Row: {
+					budget_entree_id: number | null
+					budget_id: number | null
+					content: string | null
+					created_at: string | null
+					id: number
+				}
+				Insert: {
+					budget_entree_id?: number | null
+					budget_id?: number | null
+					content?: string | null
+					created_at?: string | null
+					id?: number
+				}
+				Update: {
+					budget_entree_id?: number | null
+					budget_id?: number | null
+					content?: string | null
+					created_at?: string | null
+					id?: number
+				}
+			}
 		}
 		Views: {
 			[_ in never]: never
