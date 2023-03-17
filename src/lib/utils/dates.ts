@@ -16,3 +16,7 @@ export function yearMonthToLongString(
 		return ''
 	}
 }
+
+export function plainDateToMMDDYYY(dateString: string | null) {
+	return dateString ? Temporal.PlainDate.from(dateString).toLocaleString('en-US') : ''
+}

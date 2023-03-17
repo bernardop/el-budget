@@ -53,11 +53,14 @@ export const load = (async ({ params }) => {
 export const actions = {
 	updateEntreeName: async ({ request }) => {
 		const data = await request.formData()
-		const id = data.get('id')
-		const name = data.get('name')
+		const id = data.get('entree_id')
 
-		if (id && typeof id === 'string' && name && typeof name === 'string') {
-			await supabase.from('budget_entrees').update({ name }).eq('id', Number(id))
+		const updatedEntree = {
+			name: data.get('entree_name') as string,
+			amount: Number(data.get('entree_amount')) * 100,
+			date: data.get('entree_date') as string
 		}
+
+		await supabase.from('budget_entrees').update(updatedEntree).eq('id', Number(id))
 	}
 } satisfies Actions
